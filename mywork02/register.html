@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>注册</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	  <!-- 博客界面导航条 -->
+    <nav class="navbar">
+          <div class="container-fluid navbar-inverse navbar-fixed-top">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">名侦探柯南</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="DetectiveConanindex.html">网站首页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="story.html">剧情简介</a></li>
+          <li><a href="about.html">动画制作</a></li>
+          <li><a href="role.html">主要角色</a></li>
+          <li><a href="case.html">经典案件</a></li>
+              </ul>
+              <form class="navbar-form navbar-right">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="您想搜索的内容">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+              </form>
+    <!-- 		  <form class="navbar-form navbar-right">
+    		    <div class="input-group">
+    		      <input type="text" class="form-control" placeholder="搜索">
+    		       <span class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></span>
+    		    </div>
+
+    		  </form> -->
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="login.html">登录</a></li>
+    			<li class="active"><a href="register.html">注册</a></li>
+                <li><a href="contact.html">在线留言</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+  <!-- 注册 -->
+
+	<div id="container">
+    	<h1>用户注册</h1>
+        <hr/>
+    <!---表单-->
+   <form method="post" action="URL" autocomplete="on">  <!--根据记忆自动补全-->
+   	<label>用户名：
+        	<input type="text" name="username"  placeholder="请输入用户名" required />
+            <!--placeholder=添加提示语句  required非空验证-->
+       </label><br/>
+        <label>密&ensp;&ensp;码：
+        	<input type="password" name="pwd"  placeholder="请输入密码" required />
+        </label><br/>
+        <label>确&emsp;认：
+        	<input type="password" name="pwd2"  placeholder="请再次输入密码" required />
+        </label><br/>
+        <label>姓&ensp;&ensp;名：
+        	<input type="text" name="name" placeholder="请输入真实姓名" required />
+        </label><br/>
+        <label>邮&ensp;&ensp;箱：
+        	<input type="email" name="email"  placeholder="请输入电子邮箱" required />
+        </label><br/>
+
+        <button type="submit"> 提交注册 </button>
+    </form>
+    </div>
+
+<!-- 	版权说明区开始 -->
+     <div class="container-fluid  footer">
+       <div class="row">
+<p>Detective Conan</p>
+       </div>
+     </div>
+    <!-- 引入js文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

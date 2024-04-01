@@ -1,0 +1,478 @@
+body{
+	background-color: rgba(219,129,2,0.4);
+}
+/* 导航 */
+.navbar-brand{
+	background-color: #8c5503;
+}
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+.navbar-inverse .navbar-brand:hover{
+  color: #8c5503;
+  background-color: #fff;
+}
+
+.navbar-collapse{
+	background-color: #8c5503;
+}
+.navbar-inverse .navbar-nav > li > a{
+	color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+	color: #8c5503;
+}
+.navbar-inverse .navbar-nav > li:hover{
+	background-color: #fff;
+}
+.navbar-inverse .navbar-nav > .active > a{
+	background-color: #5e3701;
+}
+.navbar-inverse .navbar-nav > .active > a:hover{
+	background-color: #d98004;
+}
+
+.navbar-inverse{
+	background-color: #8c5503;
+}
+/* 折叠导航 */
+.navbar-inverse .navbar-toggle:hover{	
+}
+
+
+/* 介绍 */
+.introduce{
+	padding: 80px 0 50px 0;
+}
+.introduce h1{
+	margin:0px 0 20px 0 ;
+}
+.introduce p{
+	color: #333;
+	font-size: 16px;
+	line-height: 30px;
+	letter-spacing: 2px;
+}
+
+.introduce img{
+	width: 100%;
+}
+
+/* 常见咖啡树· */
+.shuzhong{
+	margin-bottom: 30px;
+	background-color: #fff;
+}
+.shuzhong .shuzhong-title{
+	text-align: center;
+}
+.shuzhong .shuzhong-content h4,p{
+	text-align: center;
+}
+.shuzhong .shuzhong-content img{
+	margin-left: 75px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+/* 咖啡美图 */
+.beau{
+	margin: 10px 0 0 0;
+	padding:0 0 30px 0;
+}
+@media (max-width:768px) {
+	.beau .mask{
+		text-align: center;
+	}
+}
+.beau img:hover{transform:scale(1.2)}
+.beau img:hover{
+	box-shadow: 0px 0px 23px gray;
+	transition: all 0.5s;
+}
+.beau .mask{
+	overflow: hidden;
+}
+
+
+
+/* 历史起源 */
+.history{
+	margin-top: 50px;
+	
+}
+.history p{
+	font-size: 15px;
+	letter-spacing: 5px;
+	background-color: #fff;
+	padding: 15px;
+}
+.history img{
+	margin-top: 20px;
+}
+
+
+/* 制作方法 */
+.pro .media{
+	background-color: #fff;
+	padding: 10px;
+}
+.pro .media .media-body{
+	padding-top: 20px;
+}
+
+/* 咖啡种类 */
+.var{
+	margin-top: 30px;
+}
+.var .thumbnail>img{
+	  width: 100%;
+  }
+.var h3{
+	text-align: center;
+	padding-bottom: 10px;
+}
+.var p a{
+	margin-right: 10px;
+}
+.var .thumbnail p a{
+	background-color: #8c5503;
+	border-color: #8c5503;
+	}
+.var .thumbnail p a:hover{
+	background-color: #d98004;
+}
+
+
+/* 关于咖啡 */
+.about{
+	margin-top: 30px;
+}
+.about h4{
+	text-align: center;
+	margin-top: 30px;
+}
+.about .btn-lg{
+	margin-top: 10px;
+	background-color: #8c5503;
+	border-color: #5e3701;
+	margin-left: 100px;
+}
+.about .btn-lg:focus{
+	background-color: #d98004;
+}
+.about .zhedie{
+	margin-top: 10px;
+	font-size: 18px;
+	padding: 10px 15px;
+	margin-left: 50px;
+	background-color: #8c5503;
+	border-color: #5e3701;
+}
+.about .zhedie:focus{
+	background-color: #d98004;
+}
+
+
+/************* 联系我们 ********/
+.contact_desc{
+	padding:50px 0;
+}
+.contact_desc h2{
+	color:#82592D;
+	margin:5px 0 15px 0;
+	font-size:2em;
+	text-transform:uppercase;
+    font-family: 'caviar_dreamsregular';
+}
+.contact-form{
+	position:relative;
+	padding-bottom:10px;
+}
+.left_form{
+	float:left;
+	width:48%;
+}
+.right_form{
+	float:left;
+	width:48%;
+	margin-left:3.8%;
+}
+.contact-form div{
+	padding:5px 0;
+}
+.contact-form span{
+	display:block;
+	font-size:0.85em;
+	font-family: 'Open Sans', sans-serif;
+	color:#82592D;
+	padding-bottom:5px;
+}
+.contact-form input[type="text"],.contact-form textarea{
+		    padding:10px;
+			display:block;
+			width:95%;
+			background:#fcfcfc;
+			border:1px solid #F5E7D9;
+			outline:none;
+			color:#693700;
+			font-size:1em;
+			font-family:Arial, Helvetica, sans-serif;			
+			-webkit-appearance:none;
+			-webkit-transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			-o-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+}
+.contact-form input[type="text"]:focus,.contact-form textarea:focus{
+	border:1px solid #E4CFBA;
+}
+.contact-form textarea{
+		resize:none;
+		height:172px;		
+}
+.myButton{
+    background:#82592D;
+	color:#DBB25F;
+	font-size:1em;
+	padding:10px 20px;
+	border:none;
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+    display:inline-block;
+    font-family: 'Open Sans', sans-serif;
+    cursor:pointer;
+    text-transform:uppercase;
+    -webkit-appearance:none;
+    float:right;
+}
+.myButton:hover{
+		background:#DBB25F;
+		color:#FFF;
+}
+.company_address{
+	 float:left;
+	 width:25%;
+}
+.company_address p{
+	color:#82592D;
+	font-family: 'Open Sans', sans-serif;
+	font-size:0.85em;
+	padding:5px 0;
+}
+.company_address p span a{
+	text-decoration:underline;
+	color:#693700;
+}
+.company_address p span a:hover{
+	text-decoration:none;
+}
+
+/* 版权区 */
+.footer{
+	background-color: #82592D;
+	padding-top:15px;
+	padding-bottom: 10px;
+	margin-top: 30px;
+}
+.footer p{
+	text-align: center;
+	font-size:16px;
+	color: #fff;
+}
+		/* 登录 */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.loginBox a {
+			text-decoration: none;
+		}
+		
+		.loginBox input,
+		button {
+			background: transparent;
+			border: 0;
+			outline: none;
+		}
+		.loginBox {
+			width: 400px;
+			height: 364px;
+			background-color: #fff;
+			margin: 100px auto;
+			margin-bottom: 340px;
+			padding-bottom: 50px;
+			border-radius: 10px;
+			box-shadow: 0 15px 25px 0 rgba(0, 0, 0, .6);
+			padding: 40px;
+			box-sizing: border-box;
+		}
+		
+		.loginBox h2 {
+			text-align: center;
+			color: #5e3701;
+			font-weight: 600px;
+			margin-bottom: 30px;
+			
+		}
+		
+		.loginBox .item {
+			height: 45px;
+			border-bottom: 1px solid #5e3701;
+			margin-bottom: 40px;
+			position: relative;
+		}
+		
+		.loginBox .item input {
+			width: 100%;
+			height: 100%;
+			color: #000;
+			padding-top: 20px;
+			box-sizing: border-box;
+		}
+		
+		.loginBox .item input:focus+label,
+		.loginBox .item input:valid+label {
+			top: 0px;
+			font-size: 2px;
+		}
+		
+		.loginBox .item label {
+			position: absolute;
+			left: 0;
+			top: 12px;
+			transition: all 0.5s linear;
+		}
+		
+		.loginBox .btn {
+			padding: 10px 20px;
+			margin-top: 30px;
+			color: #5e3701;
+			position: relative;
+			overflow: hidden;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			left: 35%;
+		}
+		
+		.loginBox .btn:hover {
+			border-radius: 5px;
+			color: #fff;
+			background: #d98004;
+			box-shadow: 0 0 5px 0 #d98004,
+				0 0 25px 0 #d98004,
+				0 0 50px 0 #d98004,
+				0 0 100px 0 #d98004;
+			transition: all 1s linear;
+		}
+		
+		.loginBox .btn>span {
+			position: absolute;
+		}
+		
+		.loginBox .btn>span:nth-child(1) {
+			width: 100%;
+			height: 2px;
+			background: -webkit-linear-gradient(left, transparent, #8c5503);
+			left: -100%;
+			top: 0px;
+			animation: line1 1s linear infinite;
+		}
+		
+		 @keyframes line1 {
+		
+			50%,
+			100% {
+				left: 100%;
+			}
+		}
+		
+		.loginBox .btn>span:nth-child(2) {
+			width: 2px;
+			height: 100%;
+			background: -webkit-linear-gradient(top, transparent, #8c5503);
+			right: 0px;
+			top: -100%;
+			animation: line2 1s 0.25s linear infinite;
+		}
+		
+		 @keyframes line2 {
+		
+			50%,
+			100% {
+				top: 100%;
+			}
+		}
+		
+		.loginBox .btn>span:nth-child(3) {
+			width: 100%;
+			height: 2px;
+			background: -webkit-linear-gradient(left, #8c5503, transparent);
+			left: 100%;
+			bottom: 0px;
+			animation: line3 1s 0.75s linear infinite;
+		}
+		
+		 @keyframes line3 {
+		
+			50%,
+			100% {
+				left: -100%;
+			}
+		}
+		
+		.loginBox .btn>span:nth-child(4) {
+			width: 2px;
+			height: 100%;
+			background: -webkit-linear-gradient(top, transparent, #8c5503);
+			left: 0px;
+			top: 100%;
+			animation: line4 1s 1s linear infinite;
+		}
+		
+		@keyframes line4 {
+		
+			50%,
+			100% {
+				top: -100%;
+			}
+		}
+		
+		/* 注册 */
+		#container{
+			background:white;
+			color:#5e3701;
+			padding:15px;
+			margin:100px auto 0px;
+			width:600px;
+			text-align:center;
+			font-family:"微软雅黑 Light";
+			font-weight: 600px;
+			box-shadow:10px 10px 15px  #7f7f7f  ;	
+			margin-bottom: 250px;
+		}
+		#container hr{width:100%;
+		border:#d98004 1px  solid  ;
+		margin-bottom:15px;
+		}
+		#container input{width:180px;
+		height:20px;
+		margin:5px;
+		font-size:16px;
+		font-family:"微软雅黑 Light";}
+		#container button{width:120px;
+		height:40px;
+		background:#8c5503;
+		border:0px;
+		color:white;
+		margin:10px;
+		font-size:18px;
+		font-family:"微软雅黑 Light";
+		font-weight:bold;}
+		#container button:hover{background:#d98004;}
