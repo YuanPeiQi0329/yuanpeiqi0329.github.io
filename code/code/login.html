@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "mm17plluu3");
+    </script>
+</head>
+
+<body>
+    
+    <section class="user">
+        <div class="title">新生—rebirth</div>
+        <div class="user_options-container">
+            <div class="user_options-text">
+                <div class="user_options-unregistered">
+                    <h2 class="user_unregistered-title">没有账号?</h2>
+                    <p class="user_unregistered-text">罕见病知识科普网站，医学前沿，专业信息，患者故事，互动社区，资源分享，一站式了解罕见病。</p>
+                    <button class="user_unregistered-signup" id="signup-button">注册</button>
+                </div>
+
+                <div class="user_options-registered">
+                    <h2 class="user_registered-title">已有账号?</h2>
+                    <p class="user_registered-text">罕见病知识科普网站，医学前沿，专业信息，患者故事，互动社区，资源分享，一站式了解罕见病。</p>
+                    <button class="user_registered-login" id="login-button">登录</button>
+                </div>
+            </div>
+
+            <div class="user_options-forms" id="user_options-forms">
+                <div class="user_forms-login">
+                    <h2 class="forms_title">登录</h2>
+                    <form class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="用户名" class="forms_field-input" autofocus />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="密码" class="forms_field-input" />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <button type="button" class="forms_buttons-forgot">忘记密码?</button>
+                            <input type="submit" value="登录" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+                <div class="user_forms-signup">
+                    <h2 class="forms_title">注册</h2>
+                    <form class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="昵称" class="forms_field-input" />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="用户名" class="forms_field-input" />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="密码" class="forms_field-input" />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input type="submit" value="注册" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const signupButton = document.getElementById('signup-button'),
+            loginButton = document.getElementById('login-button'),
+            userForms = document.getElementById('user_options-forms')
+        signupButton.addEventListener('click', () => {
+            userForms.classList.remove('bounceRight')
+            userForms.classList.add('bounceLeft')
+        }, false)
+
+        loginButton.addEventListener('click', () => {
+            userForms.classList.remove('bounceLeft')
+            userForms.classList.add('bounceRight')
+        }, false)
+        let submit = document.querySelector('.forms_buttons-action');
+        submit.addEventListener('click', function () {
+            //阻止默认事件
+            event.preventDefault();
+            if (userForms.classList.contains('bounceLeft')) {
+                //判断是否输入
+                let nickname = document.querySelectorAll('.forms_field-input')[0].value;
+                let email = document.querySelectorAll('.forms_field-input')[1].value;
+                let password = document.querySelectorAll('.forms_field-input')[2].value;
+                if (nickname == '' || email == '' || password == '') {
+                    alert('请输入昵称、用户名和密码')
+                } else {
+                    window.location.href = './index.html'
+                }
+            } else {
+                //判断是否输入
+                let email = document.querySelector('.forms_field-input').value;
+                let password = document.querySelectorAll('.forms_field-input')[1].value;
+                if (email == '' || password == '') {
+                    alert('请输入用户名和密码')
+                } else {
+                    window.location.href = './index.html'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

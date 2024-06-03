@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影音资料</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/video.css">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "mm17plluu3");
+    </script>
+    <style>
+        .headbox {
+            width: 100%;
+            background-color: #002048;
+        }
+
+        .header {
+            background-color: #002048;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headbox">
+        <div class="header">
+            <div class="header-left">
+                <img src="./images/logo.png" alt="">
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li><a href="./index.html">首页</a></li>
+                    <li><a href="./case.html">常见罕见病</a></li>
+                    <li><a href="./video.html">影音资料</a></li>
+                    <li><a href="./discuss.html">讨论区</a></li>
+                    <div style="margin-left: auto;">
+                        <input type="text" placeholder="搜索">
+                    </div>
+                    <li><a href="./login.html">注册/登陆</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="title">
+        <p>国内外与罕见病相关或由罕见病患者参演的电影与短片。知识视频科普！</p>
+    </div>
+
+    <div class="container">
+        <div class="card-column column-0">
+          <div class="card card-color-0">
+            <div class="border"></div>
+            <img src="./images/v1.png" />
+            <h1>国际罕见病日宣传视频</h1>
+          </div>
+          <div class="card card-color-2">
+            <div class="border"></div>
+            <img src="./images/v2.png" />
+            <h1>关爱渐冻人 用爱“解冻”</h1>
+          </div>
+        </div>
+        <div class="card-column column-1">
+          <div class="card card-color-1">
+            <div class="border"></div>
+            <img src="./images/v3.png" />
+            <h1>地中海贫血</h1>
+          </div>
+          <div class="card card-color-3">
+            <div class="border"></div>
+            <img src="./images/v4.png" />
+            <h1>白血病视频科普</h1>
+          </div>
+        </div>
+      </div>
+      
+      <div id="cover" class="cover"></div>
+      
+      <div id="open-content" class="open-content">
+        <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+        <video id="open-content-image" src="" autoplay loop controls></video>
+        <div class="text" id="open-content-text">
+        </div>
+      </div>
+    <script>
+        var cards, nCards, cover, openContent, openContentText, pageIsOpen = false,
+            openContentImage, closeContent, windowWidth, windowHeight, currentCard;
+        init();
+        let videoList = ['./video/1.mp4','./video/2.mp4','./video/3.mp4','./video/4.mp4']
+        let paragraphTextList = ['<p>国际罕见病日是一个全球性的活动，旨在提高公众对罕见病的认识，促进罕见病的研究和治疗。</p>','<p>渐冻人症"是一种发病率为十万分之三的罕见病，医学上称肌萎缩性脊髓侧索硬化症，是运动神经元疾病的一种。90%的患者存活期不超过5年，患者大脑意识清醒，但肌肉持续萎缩，活动能力逐步丧失，好像身体被冻住一样，因此被称为"渐冻人"</p>','<p>珠蛋白生成障碍性贫血，通常被称作地中海贫血或海洋性贫血，是一种由于珠蛋白肽链基因突变或缺失导致的遗传性溶血性贫血。这种疾病多见于地中海沿岸国家、中东、印度以及东南亚各国，以及中国的广东、广西、海南和四川地区。表现形式包括α珠蛋白生成障碍性贫血和β珠蛋白生成障碍性贫血，这两种类型在临床上最为常见。</p>','<p>白化病是由基因突变引发的先天性单基因遗传病，导致黑色素或黑色素体生物合成缺陷，主要表现为皮肤，眼睛或毛发等部位色素减退或缺失。常见类型为眼皮肤白化病（OCA）和眼白化病（OA）。标准的遗传方式包括常染色体隐性遗传和X连锁隐性遗传。白化病全球患病率大约是1:17000，即平均每17000人中有1人患白化病。近亲婚育则会提高患病率。</p>']
+        function init() {
+            resize();
+            selectElements();
+            attachListeners();
+        }
+
+        function selectElements() {
+            cards = document.getElementsByClassName('card'),
+                nCards = cards.length,
+                cover = document.getElementById('cover'),
+                openContent = document.getElementById('open-content'),
+                openContentText = document.getElementById('open-content-text'),
+                openContentImage = document.getElementById('open-content-image')
+            closeContent = document.getElementById('close-content');
+        }
+        function attachListeners() {
+            for (var i = 0; i < nCards; i++) {
+                attachListenerToCard(i);
+            }
+            closeContent.addEventListener('click', onCloseClick);
+            window.addEventListener('resize', resize);
+        }
+
+        function attachListenerToCard(i) {
+            cards[i].addEventListener('click', function (e) {
+                var card = getCardElement(e.target);
+                onCardClick(card, i);
+            })
+        }
+
+        function onCardClick(card, i) {
+            currentCard = card;
+            currentCard.className += ' clicked';
+            setTimeout(function () { animateCoverUp(currentCard,i) }, 500);
+            animateOtherCards(currentCard, true);
+            openContent.className += ' open';
+        }
+        function animateCoverUp(card,index) {
+            console.log(index);
+            var cardPosition = card.getBoundingClientRect();
+            var cardStyle = getComputedStyle(card);
+            setCoverPosition(cardPosition);
+            setCoverColor(cardStyle);
+            scaleCoverToFillWindow(cardPosition);
+            paragraphText = 
+            openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + paragraphTextList[index];
+            openContentImage.src = videoList[index];
+            setTimeout(function () {
+                window.scroll(0, 0);
+                pageIsOpen = true;
+            }, 300);
+        }
+
+        function animateCoverBack(card) {
+            var cardPosition = card.getBoundingClientRect();
+            setCoverPosition(cardPosition);
+            scaleCoverToFillWindow(cardPosition);
+            cover.style.transform = 'scaleX(' + 1 + ') scaleY(' + 1 + ') translate3d(' + (0) + 'px, ' + (0) + 'px, 0px)';
+            setTimeout(function () {
+                openContentText.innerHTML = '';
+                openContentImage.src = '';
+                cover.style.width = '0px';
+                cover.style.height = '0px';
+                pageIsOpen = false;
+                currentCard.className = currentCard.className.replace(' clicked', '');
+            }, 301);
+        }
+
+        function setCoverPosition(cardPosition) {
+            cover.style.left = cardPosition.left + 'px';
+            cover.style.top = cardPosition.top + 'px';
+            cover.style.width = cardPosition.width + 'px';
+            cover.style.height = cardPosition.height + 'px';
+        }
+
+        function setCoverColor(cardStyle) {
+            cover.style.backgroundColor = cardStyle.backgroundColor;
+        }
+
+        function scaleCoverToFillWindow(cardPosition) {
+            var scaleX = windowWidth / cardPosition.width;
+            var scaleY = windowHeight / cardPosition.height;
+            var offsetX = (windowWidth / 2 - cardPosition.width / 2 - cardPosition.left) / scaleX;
+            var offsetY = (windowHeight / 2 - cardPosition.height / 2 - cardPosition.top) / scaleY;
+            cover.style.transform = 'scaleX(' + scaleX + ') scaleY(' + scaleY + ') translate3d(' + (offsetX) + 'px, ' + (offsetY) + 'px, 0px)';
+        }
+
+        function onCloseClick() {
+            openContent.className = openContent.className.replace(' open', '');
+            animateCoverBack(currentCard);
+            animateOtherCards(currentCard, false);
+        }
+
+        function animateOtherCards(card, out) {
+            var delay = 100;
+            for (var i = 0; i < nCards; i++) {
+                if (cards[i] === card) continue;
+                if (out) animateOutCard(cards[i], delay);
+                else animateInCard(cards[i], delay);
+                delay += 100;
+            }
+        }
+        function animateOutCard(card, delay) {
+            setTimeout(function () {
+                card.className += ' out';
+            }, delay);
+        }
+
+        function animateInCard(card, delay) {
+            setTimeout(function () {
+                card.className = card.className.replace(' out', '');
+            }, delay);
+        }
+        function getCardElement(el) {
+            if (el.className.indexOf('card ') > -1) return el;
+            else return getCardElement(el.parentElement);
+        }
+        function resize() {
+            if (pageIsOpen) {
+                var cardPosition = currentCard.getBoundingClientRect();
+                setCoverPosition(cardPosition);
+                scaleCoverToFillWindow(cardPosition);
+            }
+            windowWidth = window.innerWidth;
+            windowHeight = window.innerHeight;
+        }
+    </script>
+</body>
+
+</html>
