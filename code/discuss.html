@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>讨论区</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/discuss.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "mm17plluu3");
+    </script>
+    <style>
+        .headbox {
+            width: 100%;
+            background-color: #002048;
+        }
+
+        .header {
+            background-color: #002048;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headbox">
+        <div class="header">
+            <div class="header-left">
+                <img src="./images/logo.png" alt="">
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li><a href="./index.html">首页</a></li>
+                    <li><a href="./case.html">常见罕见病</a></li>
+                    <li><a href="./video.html">影音资料</a></li>
+                    <li><a href="./discuss.html">讨论区</a></li>
+                    <div style="margin-left: auto;">
+                        <input type="text" placeholder="搜索">
+                    </div>
+                    <li><a href="./login.html">注册/登陆</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="discuss-content">
+        <!-- 留言列表 -->
+        <div id="messageList">
+
+        </div>
+        <div class="content">
+            <form id="messageForm">
+                <textarea id="message" name="message" rows="4" cols="50" required placeholder="请输入讨论内容"></textarea>
+                <button type="submit" class="btn">评论</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+            let user = "匿名用户";
+        function createMessage(message) {
+        
+            var messageElement = document.createElement("div");
+            messageElement.style.margin = "20px"
+            messageElement.appendChild(document.createTextNode(message));
+            var replyButton = document.createElement("button");
+            replyButton.classList.add("replyButton")
+            replyButton.appendChild(document.createTextNode("回复"));
+            messageElement.appendChild(replyButton);
+
+            var deleteButton = document.createElement("button");
+            deleteButton.classList.add("deleteButton")
+            deleteButton.appendChild(document.createTextNode("删除"));
+            messageElement.appendChild(deleteButton);
+
+            // 处理回复按钮点击事件
+            replyButton.addEventListener("click", function () {
+                var replyText = prompt("回复留言:");
+                if (replyText) {
+                    var replyElement = createMessage(user + '：' + replyText);
+                    replyElement.classList.add("reply");
+                    messageElement.appendChild(replyElement);
+                }
+            });
+
+            // 处理删除按钮点击事件
+            deleteButton.addEventListener("click", function () {
+                messageElement.remove();
+            });
+
+            return messageElement;
+        }
+
+        // JavaScript 代码来处理留言的发布和显示
+        document.getElementById("messageForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var message = document.getElementById("message").value;
+
+            var messageElement = createMessage(user + '：' + message);
+            document.getElementById("messageList").appendChild(messageElement);
+
+            // 清空输入字段
+            document.getElementById("message").value = "";
+        });
+
+    </script>
+</body>
+
+</html>

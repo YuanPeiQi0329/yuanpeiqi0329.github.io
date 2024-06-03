@@ -1,0 +1,131 @@
+.discuss-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.discuss-content .xq_t {
+  text-align: center;
+}
+.discuss-content .xq_t .xq_title {
+  color: #002048;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.discuss-content .xq_t p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+.discuss-content .xq_c {
+  text-align: center;
+  margin: 20px 0;
+}
+.discuss-content .xq_c p {
+  text-align: left;
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 40px;
+}
+.discuss-content .xq_c img {
+  width: 100%;
+  margin: 40px 0;
+}
+.discuss-content .content {
+  max-width: 1180px;
+  margin: 40px auto;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+.discuss-content .reply {
+  margin-left: 20px;
+}
+.discuss-content .replyButton {
+  width: 50px;
+  text-align: center;
+  padding: 3px 0;
+  border: 1px solid #002048;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin-left: 20px;
+  color: #002048;
+  cursor: pointer;
+}
+.discuss-content .replyButton:hover {
+  background-color: #002048;
+  color: #fff;
+  transition: 0.3s all;
+}
+.discuss-content .deleteButton {
+  width: 50px;
+  text-align: center;
+  padding: 3px 0;
+  border: 1px solid #002048;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin-left: 20px;
+  color: #002048;
+  cursor: pointer;
+}
+.discuss-content .deleteButton:hover {
+  background-color: #002048;
+  color: #fff;
+  transition: 0.3s all;
+}
+.discuss-content .content form {
+  display: flex;
+  flex-direction: column;
+}
+.discuss-content .content form textarea {
+  width: 100%;
+  height: 300px;
+  border: none;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+}
+.discuss-content .content form button {
+  width: 200px;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid #002048;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin-left: 20px;
+  color: #002048;
+  cursor: pointer;
+  margin: 30px auto;
+}
+.discuss-content .content form button:hover {
+  background-color: #002048;
+  color: #fff;
+  transition: 0.3s all;
+}
+.discuss-content .content form button:hover {
+  opacity: 0.8;
+  transition: 0.5s all;
+}
+.user_box {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  display: none;
+}
+.user_box p {
+  margin-right: 10px;
+}
+.user_box p:nth-child(2) {
+  color: #002048;
+  cursor: pointer;
+  font-size: 10px;
+}
+.user_box p:nth-child(2):hover {
+  color: #002048;
+}
